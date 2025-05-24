@@ -11,8 +11,11 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
+const connStr = "mongodb+srv://joshuafirme1:dCygCT73SPK6nctl@cluster0.v3vmvrn.mongodb.net/";
+const localConnStr = "mongodb://localhost:27017/exercise-tracker";
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/exercise-tracker', {
+mongoose.connect(process.env.MONGO_URI || connStr, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
